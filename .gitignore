@@ -1,0 +1,7 @@
+# Credentials and config
+*.env
+config.js
+*.key
+*.pem
+__pycache__/
+node_modules/

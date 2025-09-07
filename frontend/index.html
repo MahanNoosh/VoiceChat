@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Voice Rooms 2025</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>🎙 Voice Rooms</h1>
+      <div class="settings">
+        <input id="username" placeholder="Your name..." />
+        <select id="roomSelect"></select>
+        <button id="joinBtn">Join</button>
+        <button id="leaveBtn" disabled>Leave</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="status"></div>
+      <div id="controls">
+        <label>
+          Mic Volume
+          <input id="gainControl" type="range" min="0" max="5" step="0.1" value="1" />
+        </label>
+        <label>
+          Remote Volume
+          <input id="remoteVolume" type="range" min="0" max="1.5" step="0.01" value="1" />
+        </label>
+      </div>
+      <!-- local is muted so you don't hear yourself -->
+      <audio id="localAudio" autoplay muted playsinline></audio>
+      <div id="remoteAudios"></div>
+    </main>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="storage.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
